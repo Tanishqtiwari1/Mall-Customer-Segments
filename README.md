@@ -4,6 +4,8 @@ Predictive analytics project that estimates a person's **annual medical insuranc
 
 ![Actual vs predicted](images/actual_vs_predicted.png)
 
+> **Also in this repository:** [Customer Segmentation with K-Means](customer-segmentation/), which groups 200 mall customers into five marketing segments and includes an [interactive website](https://tanishqtiwari1.github.io/Medical-insurance-cost-prediction/).
+
 ## Problem statement
 
 Insurers price policies from expected cost. This project answers two questions:

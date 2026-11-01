@@ -1,0 +1,1853 @@
+{
+ "model": {
+  "algorithm": "KMeans",
+  "k": 5,
+  "features": [
+   "income",
+   "spending"
+  ],
+  "scaler_mean": [
+   60.56,
+   50.2
+  ],
+  "scaler_scale": [
+   26.198977,
+   25.758882
+  ],
+  "centroids_scaled": [
+   [
+    -0.200913,
+    -0.026456
+   ],
+   [
+    0.991583,
+    1.239503
+   ],
+   [
+    -1.329545,
+    1.132178
+   ],
+   [
+    1.055003,
+    -1.284439
+   ],
+   [
+    -1.307519,
+    -1.136965
+   ]
+  ],
+  "silhouette": 0.5547
+ },
+ "dataset": {
+  "rows": 200,
+  "income_range": [
+   15,
+   137
+  ],
+  "spending_range": [
+   1,
+   99
+  ],
+  "age_range": [
+   18,
+   70
+  ]
+ },
+ "segments": [
+  {
+   "id": 0,
+   "name": "Mainstream Shoppers",
+   "tagline": "Average income, average spending",
+   "description": "The largest, steadiest group. Reliable but easy to lose to competitors.",
+   "strategy": [
+    "Standard loyalty programme and regular newsletters",
+    "Cross-sell related categories",
+    "Seasonal campaigns to lift visit frequency"
+   ],
+   "size": 81,
+   "share": 0.405,
+   "center": {
+    "income": 55.3,
+    "spending": 49.52
+   },
+   "avg_age": 42.7,
+   "avg_income": 55.3,
+   "avg_spending": 49.5,
+   "income_range": [
+    39,
+    76
+   ],
+   "spending_range": [
+    34,
+    61
+   ],
+   "female_share": 0.593
+  },
+  {
+   "id": 1,
+   "name": "Premium Spenders",
+   "tagline": "High income, high spending",
+   "description": "The mall's most valuable customers. They earn well and spend freely.",
+   "strategy": [
+    "VIP loyalty tier with exclusive perks",
+    "Early access to new collections and events",
+    "Personal shopping and premium brand partnerships"
+   ],
+   "size": 39,
+   "share": 0.195,
+   "center": {
+    "income": 86.54,
+    "spending": 82.13
+   },
+   "avg_age": 32.7,
+   "avg_income": 86.5,
+   "avg_spending": 82.1,
+   "income_range": [
+    69,
+    137
+   ],
+   "spending_range": [
+    63,
+    97
+   ],
+   "female_share": 0.538
+  },
+  {
+   "id": 2,
+   "name": "Impulse Spenders",
+   "tagline": "Low income, high spending",
+   "description": "They spend more than their income suggests and respond strongly to trends.",
+   "strategy": [
+    "Trend-led campaigns and social media promotions",
+    "Limited-time and flash offers",
+    "Student or youth loyalty cards"
+   ],
+   "size": 22,
+   "share": 0.11,
+   "center": {
+    "income": 25.73,
+    "spending": 79.36
+   },
+   "avg_age": 25.3,
+   "avg_income": 25.7,
+   "avg_spending": 79.4,
+   "income_range": [
+    15,
+    39
+   ],
+   "spending_range": [
+    61,
+    99
+   ],
+   "female_share": 0.591
+  },
+  {
+   "id": 3,
+   "name": "Cautious Affluent",
+   "tagline": "High income, low spending",
+   "description": "They can afford to spend but choose not to. This is the biggest untapped opportunity.",
+   "strategy": [
+    "Quality and value-for-money messaging",
+    "Personalised offers based on past purchases",
+    "Survey to understand why they hold back"
+   ],
+   "size": 35,
+   "share": 0.175,
+   "center": {
+    "income": 88.2,
+    "spending": 17.11
+   },
+   "avg_age": 41.1,
+   "avg_income": 88.2,
+   "avg_spending": 17.1,
+   "income_range": [
+    70,
+    137
+   ],
+   "spending_range": [
+    1,
+    39
+   ],
+   "female_share": 0.457
+  },
+  {
+   "id": 4,
+   "name": "Budget Conscious",
+   "tagline": "Low income, low spending",
+   "description": "Price-sensitive shoppers who buy mainly essentials.",
+   "strategy": [
+    "Discounts, bundles and clearance events",
+    "Highlight affordable stores and essentials",
+    "Low-cost retention, such as points on every purchase"
+   ],
+   "size": 23,
+   "share": 0.115,
+   "center": {
+    "income": 26.3,
+    "spending": 20.91
+   },
+   "avg_age": 45.2,
+   "avg_income": 26.3,
+   "avg_spending": 20.9,
+   "income_range": [
+    15,
+    39
+   ],
+   "spending_range": [
+    3,
+    40
+   ],
+   "female_share": 0.609
+  }
+ ],
+ "customers": [
+  {
+   "id": 1,
+   "gender": "Male",
+   "age": 19,
+   "income": 15,
+   "spending": 39,
+   "segment": 4
+  },
+  {
+   "id": 2,
+   "gender": "Male",
+   "age": 21,
+   "income": 15,
+   "spending": 81,
+   "segment": 2
+  },
+  {
+   "id": 3,
+   "gender": "Female",
+   "age": 20,
+   "income": 16,
+   "spending": 6,
+   "segment": 4
+  },
+  {
+   "id": 4,
+   "gender": "Female",
+   "age": 23,
+   "income": 16,
+   "spending": 77,
+   "segment": 2
+  },
+  {
+   "id": 5,
+   "gender": "Female",
+   "age": 31,
+   "income": 17,
+   "spending": 40,
+   "segment": 4
+  },
+  {
+   "id": 6,
+   "gender": "Female",
+   "age": 22,
+   "income": 17,
+   "spending": 76,
+   "segment": 2
+  },
+  {
+   "id": 7,
+   "gender": "Female",
+   "age": 35,
+   "income": 18,
+   "spending": 6,
+   "segment": 4
+  },
+  {
+   "id": 8,
+   "gender": "Female",
+   "age": 23,
+   "income": 18,
+   "spending": 94,
+   "segment": 2
+  },
+  {
+   "id": 9,
+   "gender": "Male",
+   "age": 64,
+   "income": 19,
+   "spending": 3,
+   "segment": 4
+  },
+  {
+   "id": 10,
+   "gender": "Female",
+   "age": 30,
+   "income": 19,
+   "spending": 72,
+   "segment": 2
+  },
+  {
+   "id": 11,
+   "gender": "Male",
+   "age": 67,
+   "income": 19,
+   "spending": 14,
+   "segment": 4
+  },
+  {
+   "id": 12,
+   "gender": "Female",
+   "age": 35,
+   "income": 19,
+   "spending": 99,
+   "segment": 2
+  },
+  {
+   "id": 13,
+   "gender": "Female",
+   "age": 58,
+   "income": 20,
+   "spending": 15,
+   "segment": 4
+  },
+  {
+   "id": 14,
+   "gender": "Female",
+   "age": 24,
+   "income": 20,
+   "spending": 77,
+   "segment": 2
+  },
+  {
+   "id": 15,
+   "gender": "Male",
+   "age": 37,
+   "income": 20,
+   "spending": 13,
+   "segment": 4
+  },
+  {
+   "id": 16,
+   "gender": "Male",
+   "age": 22,
+   "income": 20,
+   "spending": 79,
+   "segment": 2
+  },
+  {
+   "id": 17,
+   "gender": "Female",
+   "age": 35,
+   "income": 21,
+   "spending": 35,
+   "segment": 4
+  },
+  {
+   "id": 18,
+   "gender": "Male",
+   "age": 20,
+   "income": 21,
+   "spending": 66,
+   "segment": 2
+  },
+  {
+   "id": 19,
+   "gender": "Male",
+   "age": 52,
+   "income": 23,
+   "spending": 29,
+   "segment": 4
+  },
+  {
+   "id": 20,
+   "gender": "Female",
+   "age": 35,
+   "income": 23,
+   "spending": 98,
+   "segment": 2
+  },
+  {
+   "id": 21,
+   "gender": "Male",
+   "age": 35,
+   "income": 24,
+   "spending": 35,
+   "segment": 4
+  },
+  {
+   "id": 22,
+   "gender": "Male",
+   "age": 25,
+   "income": 24,
+   "spending": 73,
+   "segment": 2
+  },
+  {
+   "id": 23,
+   "gender": "Female",
+   "age": 46,
+   "income": 25,
+   "spending": 5,
+   "segment": 4
+  },
+  {
+   "id": 24,
+   "gender": "Male",
+   "age": 31,
+   "income": 25,
+   "spending": 73,
+   "segment": 2
+  },
+  {
+   "id": 25,
+   "gender": "Female",
+   "age": 54,
+   "income": 28,
+   "spending": 14,
+   "segment": 4
+  },
+  {
+   "id": 26,
+   "gender": "Male",
+   "age": 29,
+   "income": 28,
+   "spending": 82,
+   "segment": 2
+  },
+  {
+   "id": 27,
+   "gender": "Female",
+   "age": 45,
+   "income": 28,
+   "spending": 32,
+   "segment": 4
+  },
+  {
+   "id": 28,
+   "gender": "Male",
+   "age": 35,
+   "income": 28,
+   "spending": 61,
+   "segment": 2
+  },
+  {
+   "id": 29,
+   "gender": "Female",
+   "age": 40,
+   "income": 29,
+   "spending": 31,
+   "segment": 4
+  },
+  {
+   "id": 30,
+   "gender": "Female",
+   "age": 23,
+   "income": 29,
+   "spending": 87,
+   "segment": 2
+  },
+  {
+   "id": 31,
+   "gender": "Male",
+   "age": 60,
+   "income": 30,
+   "spending": 4,
+   "segment": 4
+  },
+  {
+   "id": 32,
+   "gender": "Female",
+   "age": 21,
+   "income": 30,
+   "spending": 73,
+   "segment": 2
+  },
+  {
+   "id": 33,
+   "gender": "Male",
+   "age": 53,
+   "income": 33,
+   "spending": 4,
+   "segment": 4
+  },
+  {
+   "id": 34,
+   "gender": "Male",
+   "age": 18,
+   "income": 33,
+   "spending": 92,
+   "segment": 2
+  },
+  {
+   "id": 35,
+   "gender": "Female",
+   "age": 49,
+   "income": 33,
+   "spending": 14,
+   "segment": 4
+  },
+  {
+   "id": 36,
+   "gender": "Female",
+   "age": 21,
+   "income": 33,
+   "spending": 81,
+   "segment": 2
+  },
+  {
+   "id": 37,
+   "gender": "Female",
+   "age": 42,
+   "income": 34,
+   "spending": 17,
+   "segment": 4
+  },
+  {
+   "id": 38,
+   "gender": "Female",
+   "age": 30,
+   "income": 34,
+   "spending": 73,
+   "segment": 2
+  },
+  {
+   "id": 39,
+   "gender": "Female",
+   "age": 36,
+   "income": 37,
+   "spending": 26,
+   "segment": 4
+  },
+  {
+   "id": 40,
+   "gender": "Female",
+   "age": 20,
+   "income": 37,
+   "spending": 75,
+   "segment": 2
+  },
+  {
+   "id": 41,
+   "gender": "Female",
+   "age": 65,
+   "income": 38,
+   "spending": 35,
+   "segment": 4
+  },
+  {
+   "id": 42,
+   "gender": "Male",
+   "age": 24,
+   "income": 38,
+   "spending": 92,
+   "segment": 2
+  },
+  {
+   "id": 43,
+   "gender": "Male",
+   "age": 48,
+   "income": 39,
+   "spending": 36,
+   "segment": 4
+  },
+  {
+   "id": 44,
+   "gender": "Female",
+   "age": 31,
+   "income": 39,
+   "spending": 61,
+   "segment": 0
+  },
+  {
+   "id": 45,
+   "gender": "Female",
+   "age": 49,
+   "income": 39,
+   "spending": 28,
+   "segment": 4
+  },
+  {
+   "id": 46,
+   "gender": "Female",
+   "age": 24,
+   "income": 39,
+   "spending": 65,
+   "segment": 2
+  },
+  {
+   "id": 47,
+   "gender": "Female",
+   "age": 50,
+   "income": 40,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 48,
+   "gender": "Female",
+   "age": 27,
+   "income": 40,
+   "spending": 47,
+   "segment": 0
+  },
+  {
+   "id": 49,
+   "gender": "Female",
+   "age": 29,
+   "income": 40,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 50,
+   "gender": "Female",
+   "age": 31,
+   "income": 40,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 51,
+   "gender": "Female",
+   "age": 49,
+   "income": 42,
+   "spending": 52,
+   "segment": 0
+  },
+  {
+   "id": 52,
+   "gender": "Male",
+   "age": 33,
+   "income": 42,
+   "spending": 60,
+   "segment": 0
+  },
+  {
+   "id": 53,
+   "gender": "Female",
+   "age": 31,
+   "income": 43,
+   "spending": 54,
+   "segment": 0
+  },
+  {
+   "id": 54,
+   "gender": "Male",
+   "age": 59,
+   "income": 43,
+   "spending": 60,
+   "segment": 0
+  },
+  {
+   "id": 55,
+   "gender": "Female",
+   "age": 50,
+   "income": 43,
+   "spending": 45,
+   "segment": 0
+  },
+  {
+   "id": 56,
+   "gender": "Male",
+   "age": 47,
+   "income": 43,
+   "spending": 41,
+   "segment": 0
+  },
+  {
+   "id": 57,
+   "gender": "Female",
+   "age": 51,
+   "income": 44,
+   "spending": 50,
+   "segment": 0
+  },
+  {
+   "id": 58,
+   "gender": "Male",
+   "age": 69,
+   "income": 44,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 59,
+   "gender": "Female",
+   "age": 27,
+   "income": 46,
+   "spending": 51,
+   "segment": 0
+  },
+  {
+   "id": 60,
+   "gender": "Male",
+   "age": 53,
+   "income": 46,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 61,
+   "gender": "Male",
+   "age": 70,
+   "income": 46,
+   "spending": 56,
+   "segment": 0
+  },
+  {
+   "id": 62,
+   "gender": "Male",
+   "age": 19,
+   "income": 46,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 63,
+   "gender": "Female",
+   "age": 67,
+   "income": 47,
+   "spending": 52,
+   "segment": 0
+  },
+  {
+   "id": 64,
+   "gender": "Female",
+   "age": 54,
+   "income": 47,
+   "spending": 59,
+   "segment": 0
+  },
+  {
+   "id": 65,
+   "gender": "Male",
+   "age": 63,
+   "income": 48,
+   "spending": 51,
+   "segment": 0
+  },
+  {
+   "id": 66,
+   "gender": "Male",
+   "age": 18,
+   "income": 48,
+   "spending": 59,
+   "segment": 0
+  },
+  {
+   "id": 67,
+   "gender": "Female",
+   "age": 43,
+   "income": 48,
+   "spending": 50,
+   "segment": 0
+  },
+  {
+   "id": 68,
+   "gender": "Female",
+   "age": 68,
+   "income": 48,
+   "spending": 48,
+   "segment": 0
+  },
+  {
+   "id": 69,
+   "gender": "Male",
+   "age": 19,
+   "income": 48,
+   "spending": 59,
+   "segment": 0
+  },
+  {
+   "id": 70,
+   "gender": "Female",
+   "age": 32,
+   "income": 48,
+   "spending": 47,
+   "segment": 0
+  },
+  {
+   "id": 71,
+   "gender": "Male",
+   "age": 70,
+   "income": 49,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 72,
+   "gender": "Female",
+   "age": 47,
+   "income": 49,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 73,
+   "gender": "Female",
+   "age": 60,
+   "income": 50,
+   "spending": 49,
+   "segment": 0
+  },
+  {
+   "id": 74,
+   "gender": "Female",
+   "age": 60,
+   "income": 50,
+   "spending": 56,
+   "segment": 0
+  },
+  {
+   "id": 75,
+   "gender": "Male",
+   "age": 59,
+   "income": 54,
+   "spending": 47,
+   "segment": 0
+  },
+  {
+   "id": 76,
+   "gender": "Male",
+   "age": 26,
+   "income": 54,
+   "spending": 54,
+   "segment": 0
+  },
+  {
+   "id": 77,
+   "gender": "Female",
+   "age": 45,
+   "income": 54,
+   "spending": 53,
+   "segment": 0
+  },
+  {
+   "id": 78,
+   "gender": "Male",
+   "age": 40,
+   "income": 54,
+   "spending": 48,
+   "segment": 0
+  },
+  {
+   "id": 79,
+   "gender": "Female",
+   "age": 23,
+   "income": 54,
+   "spending": 52,
+   "segment": 0
+  },
+  {
+   "id": 80,
+   "gender": "Female",
+   "age": 49,
+   "income": 54,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 81,
+   "gender": "Male",
+   "age": 57,
+   "income": 54,
+   "spending": 51,
+   "segment": 0
+  },
+  {
+   "id": 82,
+   "gender": "Male",
+   "age": 38,
+   "income": 54,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 83,
+   "gender": "Male",
+   "age": 67,
+   "income": 54,
+   "spending": 41,
+   "segment": 0
+  },
+  {
+   "id": 84,
+   "gender": "Female",
+   "age": 46,
+   "income": 54,
+   "spending": 44,
+   "segment": 0
+  },
+  {
+   "id": 85,
+   "gender": "Female",
+   "age": 21,
+   "income": 54,
+   "spending": 57,
+   "segment": 0
+  },
+  {
+   "id": 86,
+   "gender": "Male",
+   "age": 48,
+   "income": 54,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 87,
+   "gender": "Female",
+   "age": 55,
+   "income": 57,
+   "spending": 58,
+   "segment": 0
+  },
+  {
+   "id": 88,
+   "gender": "Female",
+   "age": 22,
+   "income": 57,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 89,
+   "gender": "Female",
+   "age": 34,
+   "income": 58,
+   "spending": 60,
+   "segment": 0
+  },
+  {
+   "id": 90,
+   "gender": "Female",
+   "age": 50,
+   "income": 58,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 91,
+   "gender": "Female",
+   "age": 68,
+   "income": 59,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 92,
+   "gender": "Male",
+   "age": 18,
+   "income": 59,
+   "spending": 41,
+   "segment": 0
+  },
+  {
+   "id": 93,
+   "gender": "Male",
+   "age": 48,
+   "income": 60,
+   "spending": 49,
+   "segment": 0
+  },
+  {
+   "id": 94,
+   "gender": "Female",
+   "age": 40,
+   "income": 60,
+   "spending": 40,
+   "segment": 0
+  },
+  {
+   "id": 95,
+   "gender": "Female",
+   "age": 32,
+   "income": 60,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 96,
+   "gender": "Male",
+   "age": 24,
+   "income": 60,
+   "spending": 52,
+   "segment": 0
+  },
+  {
+   "id": 97,
+   "gender": "Female",
+   "age": 47,
+   "income": 60,
+   "spending": 47,
+   "segment": 0
+  },
+  {
+   "id": 98,
+   "gender": "Female",
+   "age": 27,
+   "income": 60,
+   "spending": 50,
+   "segment": 0
+  },
+  {
+   "id": 99,
+   "gender": "Male",
+   "age": 48,
+   "income": 61,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 100,
+   "gender": "Male",
+   "age": 20,
+   "income": 61,
+   "spending": 49,
+   "segment": 0
+  },
+  {
+   "id": 101,
+   "gender": "Female",
+   "age": 23,
+   "income": 62,
+   "spending": 41,
+   "segment": 0
+  },
+  {
+   "id": 102,
+   "gender": "Female",
+   "age": 49,
+   "income": 62,
+   "spending": 48,
+   "segment": 0
+  },
+  {
+   "id": 103,
+   "gender": "Male",
+   "age": 67,
+   "income": 62,
+   "spending": 59,
+   "segment": 0
+  },
+  {
+   "id": 104,
+   "gender": "Male",
+   "age": 26,
+   "income": 62,
+   "spending": 55,
+   "segment": 0
+  },
+  {
+   "id": 105,
+   "gender": "Male",
+   "age": 49,
+   "income": 62,
+   "spending": 56,
+   "segment": 0
+  },
+  {
+   "id": 106,
+   "gender": "Female",
+   "age": 21,
+   "income": 62,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 107,
+   "gender": "Female",
+   "age": 66,
+   "income": 63,
+   "spending": 50,
+   "segment": 0
+  },
+  {
+   "id": 108,
+   "gender": "Male",
+   "age": 54,
+   "income": 63,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 109,
+   "gender": "Male",
+   "age": 68,
+   "income": 63,
+   "spending": 43,
+   "segment": 0
+  },
+  {
+   "id": 110,
+   "gender": "Male",
+   "age": 66,
+   "income": 63,
+   "spending": 48,
+   "segment": 0
+  },
+  {
+   "id": 111,
+   "gender": "Male",
+   "age": 65,
+   "income": 63,
+   "spending": 52,
+   "segment": 0
+  },
+  {
+   "id": 112,
+   "gender": "Female",
+   "age": 19,
+   "income": 63,
+   "spending": 54,
+   "segment": 0
+  },
+  {
+   "id": 113,
+   "gender": "Female",
+   "age": 38,
+   "income": 64,
+   "spending": 42,
+   "segment": 0
+  },
+  {
+   "id": 114,
+   "gender": "Male",
+   "age": 19,
+   "income": 64,
+   "spending": 46,
+   "segment": 0
+  },
+  {
+   "id": 115,
+   "gender": "Female",
+   "age": 18,
+   "income": 65,
+   "spending": 48,
+   "segment": 0
+  },
+  {
+   "id": 116,
+   "gender": "Female",
+   "age": 19,
+   "income": 65,
+   "spending": 50,
+   "segment": 0
+  },
+  {
+   "id": 117,
+   "gender": "Female",
+   "age": 63,
+   "income": 65,
+   "spending": 43,
+   "segment": 0
+  },
+  {
+   "id": 118,
+   "gender": "Female",
+   "age": 49,
+   "income": 65,
+   "spending": 59,
+   "segment": 0
+  },
+  {
+   "id": 119,
+   "gender": "Female",
+   "age": 51,
+   "income": 67,
+   "spending": 43,
+   "segment": 0
+  },
+  {
+   "id": 120,
+   "gender": "Female",
+   "age": 50,
+   "income": 67,
+   "spending": 57,
+   "segment": 0
+  },
+  {
+   "id": 121,
+   "gender": "Male",
+   "age": 27,
+   "income": 67,
+   "spending": 56,
+   "segment": 0
+  },
+  {
+   "id": 122,
+   "gender": "Female",
+   "age": 38,
+   "income": 67,
+   "spending": 40,
+   "segment": 0
+  },
+  {
+   "id": 123,
+   "gender": "Female",
+   "age": 40,
+   "income": 69,
+   "spending": 58,
+   "segment": 0
+  },
+  {
+   "id": 124,
+   "gender": "Male",
+   "age": 39,
+   "income": 69,
+   "spending": 91,
+   "segment": 1
+  },
+  {
+   "id": 125,
+   "gender": "Female",
+   "age": 23,
+   "income": 70,
+   "spending": 29,
+   "segment": 3
+  },
+  {
+   "id": 126,
+   "gender": "Female",
+   "age": 31,
+   "income": 70,
+   "spending": 77,
+   "segment": 1
+  },
+  {
+   "id": 127,
+   "gender": "Male",
+   "age": 43,
+   "income": 71,
+   "spending": 35,
+   "segment": 0
+  },
+  {
+   "id": 128,
+   "gender": "Male",
+   "age": 40,
+   "income": 71,
+   "spending": 95,
+   "segment": 1
+  },
+  {
+   "id": 129,
+   "gender": "Male",
+   "age": 59,
+   "income": 71,
+   "spending": 11,
+   "segment": 3
+  },
+  {
+   "id": 130,
+   "gender": "Male",
+   "age": 38,
+   "income": 71,
+   "spending": 75,
+   "segment": 1
+  },
+  {
+   "id": 131,
+   "gender": "Male",
+   "age": 47,
+   "income": 71,
+   "spending": 9,
+   "segment": 3
+  },
+  {
+   "id": 132,
+   "gender": "Male",
+   "age": 39,
+   "income": 71,
+   "spending": 75,
+   "segment": 1
+  },
+  {
+   "id": 133,
+   "gender": "Female",
+   "age": 25,
+   "income": 72,
+   "spending": 34,
+   "segment": 0
+  },
+  {
+   "id": 134,
+   "gender": "Female",
+   "age": 31,
+   "income": 72,
+   "spending": 71,
+   "segment": 1
+  },
+  {
+   "id": 135,
+   "gender": "Male",
+   "age": 20,
+   "income": 73,
+   "spending": 5,
+   "segment": 3
+  },
+  {
+   "id": 136,
+   "gender": "Female",
+   "age": 29,
+   "income": 73,
+   "spending": 88,
+   "segment": 1
+  },
+  {
+   "id": 137,
+   "gender": "Female",
+   "age": 44,
+   "income": 73,
+   "spending": 7,
+   "segment": 3
+  },
+  {
+   "id": 138,
+   "gender": "Male",
+   "age": 32,
+   "income": 73,
+   "spending": 73,
+   "segment": 1
+  },
+  {
+   "id": 139,
+   "gender": "Male",
+   "age": 19,
+   "income": 74,
+   "spending": 10,
+   "segment": 3
+  },
+  {
+   "id": 140,
+   "gender": "Female",
+   "age": 35,
+   "income": 74,
+   "spending": 72,
+   "segment": 1
+  },
+  {
+   "id": 141,
+   "gender": "Female",
+   "age": 57,
+   "income": 75,
+   "spending": 5,
+   "segment": 3
+  },
+  {
+   "id": 142,
+   "gender": "Male",
+   "age": 32,
+   "income": 75,
+   "spending": 93,
+   "segment": 1
+  },
+  {
+   "id": 143,
+   "gender": "Female",
+   "age": 28,
+   "income": 76,
+   "spending": 40,
+   "segment": 0
+  },
+  {
+   "id": 144,
+   "gender": "Female",
+   "age": 32,
+   "income": 76,
+   "spending": 87,
+   "segment": 1
+  },
+  {
+   "id": 145,
+   "gender": "Male",
+   "age": 25,
+   "income": 77,
+   "spending": 12,
+   "segment": 3
+  },
+  {
+   "id": 146,
+   "gender": "Male",
+   "age": 28,
+   "income": 77,
+   "spending": 97,
+   "segment": 1
+  },
+  {
+   "id": 147,
+   "gender": "Male",
+   "age": 48,
+   "income": 77,
+   "spending": 36,
+   "segment": 3
+  },
+  {
+   "id": 148,
+   "gender": "Female",
+   "age": 32,
+   "income": 77,
+   "spending": 74,
+   "segment": 1
+  },
+  {
+   "id": 149,
+   "gender": "Female",
+   "age": 34,
+   "income": 78,
+   "spending": 22,
+   "segment": 3
+  },
+  {
+   "id": 150,
+   "gender": "Male",
+   "age": 34,
+   "income": 78,
+   "spending": 90,
+   "segment": 1
+  },
+  {
+   "id": 151,
+   "gender": "Male",
+   "age": 43,
+   "income": 78,
+   "spending": 17,
+   "segment": 3
+  },
+  {
+   "id": 152,
+   "gender": "Male",
+   "age": 39,
+   "income": 78,
+   "spending": 88,
+   "segment": 1
+  },
+  {
+   "id": 153,
+   "gender": "Female",
+   "age": 44,
+   "income": 78,
+   "spending": 20,
+   "segment": 3
+  },
+  {
+   "id": 154,
+   "gender": "Female",
+   "age": 38,
+   "income": 78,
+   "spending": 76,
+   "segment": 1
+  },
+  {
+   "id": 155,
+   "gender": "Female",
+   "age": 47,
+   "income": 78,
+   "spending": 16,
+   "segment": 3
+  },
+  {
+   "id": 156,
+   "gender": "Female",
+   "age": 27,
+   "income": 78,
+   "spending": 89,
+   "segment": 1
+  },
+  {
+   "id": 157,
+   "gender": "Male",
+   "age": 37,
+   "income": 78,
+   "spending": 1,
+   "segment": 3
+  },
+  {
+   "id": 158,
+   "gender": "Female",
+   "age": 30,
+   "income": 78,
+   "spending": 78,
+   "segment": 1
+  },
+  {
+   "id": 159,
+   "gender": "Male",
+   "age": 34,
+   "income": 78,
+   "spending": 1,
+   "segment": 3
+  },
+  {
+   "id": 160,
+   "gender": "Female",
+   "age": 30,
+   "income": 78,
+   "spending": 73,
+   "segment": 1
+  },
+  {
+   "id": 161,
+   "gender": "Female",
+   "age": 56,
+   "income": 79,
+   "spending": 35,
+   "segment": 3
+  },
+  {
+   "id": 162,
+   "gender": "Female",
+   "age": 29,
+   "income": 79,
+   "spending": 83,
+   "segment": 1
+  },
+  {
+   "id": 163,
+   "gender": "Male",
+   "age": 19,
+   "income": 81,
+   "spending": 5,
+   "segment": 3
+  },
+  {
+   "id": 164,
+   "gender": "Female",
+   "age": 31,
+   "income": 81,
+   "spending": 93,
+   "segment": 1
+  },
+  {
+   "id": 165,
+   "gender": "Male",
+   "age": 50,
+   "income": 85,
+   "spending": 26,
+   "segment": 3
+  },
+  {
+   "id": 166,
+   "gender": "Female",
+   "age": 36,
+   "income": 85,
+   "spending": 75,
+   "segment": 1
+  },
+  {
+   "id": 167,
+   "gender": "Male",
+   "age": 42,
+   "income": 86,
+   "spending": 20,
+   "segment": 3
+  },
+  {
+   "id": 168,
+   "gender": "Female",
+   "age": 33,
+   "income": 86,
+   "spending": 95,
+   "segment": 1
+  },
+  {
+   "id": 169,
+   "gender": "Female",
+   "age": 36,
+   "income": 87,
+   "spending": 27,
+   "segment": 3
+  },
+  {
+   "id": 170,
+   "gender": "Male",
+   "age": 32,
+   "income": 87,
+   "spending": 63,
+   "segment": 1
+  },
+  {
+   "id": 171,
+   "gender": "Male",
+   "age": 40,
+   "income": 87,
+   "spending": 13,
+   "segment": 3
+  },
+  {
+   "id": 172,
+   "gender": "Male",
+   "age": 28,
+   "income": 87,
+   "spending": 75,
+   "segment": 1
+  },
+  {
+   "id": 173,
+   "gender": "Male",
+   "age": 36,
+   "income": 87,
+   "spending": 10,
+   "segment": 3
+  },
+  {
+   "id": 174,
+   "gender": "Male",
+   "age": 36,
+   "income": 87,
+   "spending": 92,
+   "segment": 1
+  },
+  {
+   "id": 175,
+   "gender": "Female",
+   "age": 52,
+   "income": 88,
+   "spending": 13,
+   "segment": 3
+  },
+  {
+   "id": 176,
+   "gender": "Female",
+   "age": 30,
+   "income": 88,
+   "spending": 86,
+   "segment": 1
+  },
+  {
+   "id": 177,
+   "gender": "Male",
+   "age": 58,
+   "income": 88,
+   "spending": 15,
+   "segment": 3
+  },
+  {
+   "id": 178,
+   "gender": "Male",
+   "age": 27,
+   "income": 88,
+   "spending": 69,
+   "segment": 1
+  },
+  {
+   "id": 179,
+   "gender": "Male",
+   "age": 59,
+   "income": 93,
+   "spending": 14,
+   "segment": 3
+  },
+  {
+   "id": 180,
+   "gender": "Male",
+   "age": 35,
+   "income": 93,
+   "spending": 90,
+   "segment": 1
+  },
+  {
+   "id": 181,
+   "gender": "Female",
+   "age": 37,
+   "income": 97,
+   "spending": 32,
+   "segment": 3
+  },
+  {
+   "id": 182,
+   "gender": "Female",
+   "age": 32,
+   "income": 97,
+   "spending": 86,
+   "segment": 1
+  },
+  {
+   "id": 183,
+   "gender": "Male",
+   "age": 46,
+   "income": 98,
+   "spending": 15,
+   "segment": 3
+  },
+  {
+   "id": 184,
+   "gender": "Female",
+   "age": 29,
+   "income": 98,
+   "spending": 88,
+   "segment": 1
+  },
+  {
+   "id": 185,
+   "gender": "Female",
+   "age": 41,
+   "income": 99,
+   "spending": 39,
+   "segment": 3
+  },
+  {
+   "id": 186,
+   "gender": "Male",
+   "age": 30,
+   "income": 99,
+   "spending": 97,
+   "segment": 1
+  },
+  {
+   "id": 187,
+   "gender": "Female",
+   "age": 54,
+   "income": 101,
+   "spending": 24,
+   "segment": 3
+  },
+  {
+   "id": 188,
+   "gender": "Male",
+   "age": 28,
+   "income": 101,
+   "spending": 68,
+   "segment": 1
+  },
+  {
+   "id": 189,
+   "gender": "Female",
+   "age": 41,
+   "income": 103,
+   "spending": 17,
+   "segment": 3
+  },
+  {
+   "id": 190,
+   "gender": "Female",
+   "age": 36,
+   "income": 103,
+   "spending": 85,
+   "segment": 1
+  },
+  {
+   "id": 191,
+   "gender": "Female",
+   "age": 34,
+   "income": 103,
+   "spending": 23,
+   "segment": 3
+  },
+  {
+   "id": 192,
+   "gender": "Female",
+   "age": 32,
+   "income": 103,
+   "spending": 69,
+   "segment": 1
+  },
+  {
+   "id": 193,
+   "gender": "Male",
+   "age": 33,
+   "income": 113,
+   "spending": 8,
+   "segment": 3
+  },
+  {
+   "id": 194,
+   "gender": "Female",
+   "age": 38,
+   "income": 113,
+   "spending": 91,
+   "segment": 1
+  },
+  {
+   "id": 195,
+   "gender": "Female",
+   "age": 47,
+   "income": 120,
+   "spending": 16,
+   "segment": 3
+  },
+  {
+   "id": 196,
+   "gender": "Female",
+   "age": 35,
+   "income": 120,
+   "spending": 79,
+   "segment": 1
+  },
+  {
+   "id": 197,
+   "gender": "Female",
+   "age": 45,
+   "income": 126,
+   "spending": 28,
+   "segment": 3
+  },
+  {
+   "id": 198,
+   "gender": "Male",
+   "age": 32,
+   "income": 126,
+   "spending": 74,
+   "segment": 1
+  },
+  {
+   "id": 199,
+   "gender": "Male",
+   "age": 32,
+   "income": 137,
+   "spending": 18,
+   "segment": 3
+  },
+  {
+   "id": 200,
+   "gender": "Male",
+   "age": 30,
+   "income": 137,
+   "spending": 83,
+   "segment": 1
+  }
+ ],
+ "diagnostics": {
+  "k": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "wcss": [
+   400.0,
+   269.69,
+   157.7,
+   108.92,
+   65.57,
+   55.06,
+   44.86,
+   37.23,
+   32.39,
+   29.98
+  ],
+  "silhouette_k": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10
+  ],
+  "silhouette": [
+   0.3213,
+   0.4666,
+   0.4939,
+   0.5547,
+   0.5399,
+   0.5281,
+   0.4552,
+   0.4571,
+   0.4432
+  ]
+ }
+}
