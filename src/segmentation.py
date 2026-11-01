@@ -159,6 +159,8 @@ def build_export(df: pd.DataFrame, scaler, model, X) -> dict:
             "scaler_scale": [round(float(v), 6) for v in scaler.scale_],
             "centroids_scaled": [[round(float(v), 6) for v in c] for c in model.cluster_centers_],
             "silhouette": round(float(silhouette_score(X, labels)), 4),
+            # shared within-cluster variance, used for soft (probabilistic) membership
+            "sigma2": round(float(soft_variance(model, X)), 6),
         },
         "dataset": {
             "rows": int(len(df)),
@@ -174,6 +176,24 @@ def build_export(df: pd.DataFrame, scaler, model, X) -> dict:
         ],
         "diagnostics": elbow_and_silhouette(X),
     }
+
+
+def soft_variance(model: KMeans, X: np.ndarray) -> float:
+    """Variance per feature of the points around their own centre.
+
+    K-Means is the limiting case of a Gaussian mixture where every cluster
+    shares one spherical variance. Using that variance gives membership
+    probabilities whose most likely segment always equals the K-Means label.
+    """
+    return model.inertia_ / (X.shape[0] * X.shape[1])
+
+
+def segment_probabilities(income: float, spending: float, scaler, model, sigma2: float) -> np.ndarray:
+    point = pd.DataFrame([[income, spending]], columns=FEATURES)
+    d2 = ((model.cluster_centers_ - scaler.transform(point)[0]) ** 2).sum(axis=1)
+    logits = -d2 / (2 * sigma2)
+    p = np.exp(logits - logits.max())
+    return p / p.sum()
 
 
 def predict_segment(income: float, spending: float, scaler, model) -> int:

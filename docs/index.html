@@ -26,7 +26,9 @@
       </a>
       <nav aria-label="Sections">
         <a href="#finder">Finder</a>
+        <a href="#batch">Batch</a>
         <a href="#segments">Segments</a>
+        <a href="#explore-k">Explore k</a>
         <a href="#method">Method</a>
       </nav>
       <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
@@ -81,9 +83,13 @@
             <p class="result-tagline" id="result-tagline"></p>
             <p id="result-desc"></p>
             <div class="confidence">
-              <div class="confidence-row"><span>Match strength</span><strong id="result-conf"></strong></div>
-              <div class="bar"><span id="result-bar"></span></div>
+              <div class="confidence-row"><span>Membership probability</span><strong id="result-conf"></strong></div>
+              <ul class="prob-list" id="prob-list" aria-label="Probability and distance for each segment"></ul>
               <p class="hint" id="result-runner"></p>
+              <details class="explain">
+                <summary>How is this calculated?</summary>
+                <p>The customer is scaled the same way as the training data. We then measure the distance <em>d</em> to each segment centre in standard-deviation units. K-Means picks the nearest centre. The probabilities treat each segment as a bell curve with the spread observed in the data (soft K-Means), so closer centres get exponentially more weight.</p>
+              </details>
             </div>
             <h4>Recommended actions</h4>
             <ul class="checklist" id="result-strategy"></ul>
@@ -104,12 +110,85 @@
       </div>
     </section>
 
+    <section id="batch" class="container section" aria-labelledby="batch-title">
+      <div class="section-head">
+        <h2 id="batch-title">Batch scoring</h2>
+        <p>Segment a whole customer list at once. Upload a CSV with an income column (k$) and a spending-score column (1–100). Everything runs in your browser and nothing is uploaded to a server.</p>
+      </div>
+      <div class="card batch-card">
+        <div class="dropzone" id="dropzone">
+          <svg class="drop-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+          <p><strong>Drop a CSV file here</strong> or <label for="csv-file" class="link-label" tabindex="0">browse</label></p>
+          <p class="hint">Recognised headers include <code>Annual Income (k$)</code> or <code>income</code>, and <code>Spending Score (1-100)</code> or <code>spending</code>. All other columns are kept.</p>
+          <input type="file" id="csv-file" accept=".csv,text/csv" class="visually-hidden">
+          <div class="drop-actions">
+            <button type="button" class="btn" id="batch-sample">Try with the 200 mall customers</button>
+            <button type="button" class="btn btn-ghost" id="batch-template">Download template</button>
+          </div>
+        </div>
+        <p class="batch-error" id="batch-error" role="alert" hidden></p>
+
+        <div class="batch-results" id="batch-results" hidden>
+          <div class="batch-head">
+            <div>
+              <p class="result-kicker" id="batch-file"></p>
+              <h3 id="batch-summary"></h3>
+            </div>
+            <button type="button" class="btn" id="batch-download">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"/></svg>
+              Download results CSV
+            </button>
+          </div>
+          <div class="dist-bar" id="batch-dist" role="img"></div>
+          <ul class="dist-legend" id="batch-legend"></ul>
+          <details class="skipped" id="batch-skipped" hidden><summary></summary><ul></ul></details>
+          <div class="table-wrap">
+            <table class="data-table" id="batch-table"><thead></thead><tbody></tbody></table>
+          </div>
+          <p class="hint" id="batch-table-note"></p>
+        </div>
+      </div>
+    </section>
+
     <section id="segments" class="container section" aria-labelledby="segments-title">
       <div class="section-head">
         <h2 id="segments-title">Meet the segments</h2>
         <p>Profiles are computed from the customers in each cluster. Names come from where each cluster's centre sits on income and spending.</p>
       </div>
       <div class="segment-grid" id="segment-grid"></div>
+    </section>
+
+    <section id="explore-k" class="container section" aria-labelledby="k-title">
+      <div class="section-head">
+        <h2 id="k-title">Why five segments? Try another k</h2>
+        <p>Pick a number of clusters and K-Means re-runs live in your browser on the same 200 customers. Watch the silhouette score, which measures how well separated the groups are. It peaks at k = 5.</p>
+      </div>
+      <div class="k-grid">
+        <div class="card k-controls">
+          <div class="field">
+            <div class="field-row">
+              <label for="k-slider">Number of clusters (k)</label>
+              <output class="k-value" id="k-value" for="k-slider">5</output>
+            </div>
+            <input type="range" id="k-slider" min="2" max="10" step="1" value="5">
+            <div class="k-ticks" aria-hidden="true"><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+          </div>
+          <div class="k-metrics">
+            <div class="metric"><span>Silhouette</span><strong id="k-sil">–</strong></div>
+            <div class="metric"><span>Within-cluster SS</span><strong id="k-wcss">–</strong></div>
+          </div>
+          <div class="sil-meter" aria-hidden="true"><span id="k-sil-bar"></span><i id="k-sil-best"></i></div>
+          <p class="k-verdict" id="k-verdict" aria-live="polite"></p>
+          <h4>Cluster sizes</h4>
+          <ul class="k-sizes" id="k-sizes"></ul>
+          <button type="button" class="btn btn-ghost" id="k-rerun">↻ Re-run with new random starts</button>
+          <p class="hint" id="k-runinfo"></p>
+        </div>
+        <div class="card chart-card">
+          <svg id="k-scatter" role="img" aria-label="Customers coloured by the clusters found for the selected k"></svg>
+          <p class="chart-note">Colours here are cluster numbers, not the named segments, because the groups change with k. ✕ marks each cluster centre.</p>
+        </div>
+      </div>
     </section>
 
     <section id="method" class="container section" aria-labelledby="method-title">

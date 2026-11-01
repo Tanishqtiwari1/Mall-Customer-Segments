@@ -39,7 +39,8 @@ There is no "correct answer" column, so this is an **unsupervised learning** (cl
    - Hierarchical (Ward) clustering finds the same groups (Adjusted Rand Index 0.94).
    - Results are identical across 20 random seeds.
    - Compared against DBSCAN and a 3-feature model that adds age.
-7. **Deployment:** the model is exported to JSON, and the website runs the nearest-centre rule in the browser.
+7. **Soft membership:** soft K-Means (a Gaussian with the shared within-cluster variance around each centre) gives each customer a probability for every segment. 92% of customers are assigned with at least 90% probability, and the rest sit on the edge of the Mainstream segment. A full Gaussian Mixture Model agrees with K-Means on 98.5% of customers.
+8. **Deployment:** the model is exported to JSON, and the website runs the nearest-centre rule and the probabilities in the browser.
 
 ## Results
 
@@ -61,12 +62,14 @@ There is no "correct answer" column, so this is an **unsupervised learning** (cl
 
 The site is in [`docs/`](docs): plain HTML, CSS and JavaScript, with no build step and no backend.
 
-- **Segment finder:** sliders and number inputs, plus one-click example customers. Shows the predicted segment, a match-strength indicator (and a warning near a boundary), the next-closest segment and recommended actions.
+- **Segment finder:** sliders and number inputs, plus one-click example customers. Shows the predicted segment, its **membership probability**, a probability and distance breakdown for all five segments (with a warning near a boundary) and recommended actions.
 - **Interactive map:** all 200 customers with hover or keyboard tooltips, segment centres, shaded decision regions, legend filters, and click-to-place.
+- **Batch scoring:** drag and drop (or browse for) a CSV of customers. Income and spending columns are detected automatically, all other columns are kept, and it accepts comma or semicolon separators and quoted fields. You get a segment-mix summary, a preview table, clear reasons for invalid rows and a warning for incomes outside the training range, plus a **downloadable results CSV**. It runs entirely in the browser, so no data leaves your computer.
+- **Live k explorer:** a slider re-runs K-Means (k-means++, best of 25 starts) in the browser for k = 2 to 10. The map, cluster sizes, within-cluster sum of squares and silhouette score update instantly. It shows visually why k = 5 is best and lets you re-run with new random starts to see that the result is stable.
 - **Segment cards:** size, averages, gender split and strategy for each segment, with a "show on the map" shortcut.
 - **Method section:** pipeline steps and live elbow and silhouette charts.
 - **Light and dark themes** (follows your system, with a manual toggle), a **responsive** layout for phone, tablet and desktop, and **accessibility** support: keyboard navigation, ARIA labels, a skip link and reduced-motion support.
-- **Accurate:** browser predictions match scikit-learn's `KMeans.predict` for all 200 customers and a 520-point test grid.
+- **Accurate:** predictions on the live site match scikit-learn's `KMeans.predict` for all 200 customers and a 520-point test grid. The probabilities match the Python implementation, and the k explorer reproduces scikit-learn's silhouette and within-cluster SS exactly for k = 3–6 and to within 0.003 for k = 7–9. For k = 2 and 10 it finds a slightly tighter clustering than scikit-learn's own run.
 
 ## Project structure
 

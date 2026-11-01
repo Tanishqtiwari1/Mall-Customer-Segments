@@ -273,3 +273,80 @@ input[type="range"] { width: 100%; accent-color: var(--accent); height: 28px; cu
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- probabilities ---------- */
+.prob-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.prob-list li { display: grid; grid-template-columns: 1fr 64px 40px; gap: 8px; align-items: center; font-size: 0.82rem; }
+.prob-list li.top { font-weight: 600; }
+.prob-name { display: flex; align-items: center; gap: 6px; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prob-bar { height: 6px; border-radius: 99px; background: var(--border); overflow: hidden; }
+.prob-bar span { display: block; height: 100%; border-radius: inherit; transition: width 0.3s; }
+.prob-val { text-align: right; font-variant-numeric: tabular-nums; }
+.prob-dist { grid-column: 1 / -1; color: var(--muted); font-size: 0.74rem; margin-top: -5px; padding-left: 15px; }
+.explain { margin-top: 10px; font-size: 0.82rem; color: var(--muted); }
+.explain summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.explain p { margin-top: 6px; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; font: inherit; font-size: 0.88rem; font-weight: 600;
+  padding: 9px 14px; border-radius: 10px; cursor: pointer; border: 1px solid transparent;
+  background: var(--accent); color: #fff;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.btn-ghost { background: var(--surface-2); color: var(--text); border-color: var(--border); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- batch scoring ---------- */
+.batch-card { padding: 22px; }
+.dropzone {
+  border: 2px dashed var(--border); border-radius: 14px; padding: 28px 20px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; transition: border-color 0.2s, background 0.2s;
+}
+.dropzone.drag { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.drop-icon { width: 34px; height: 34px; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.dropzone .hint { max-width: 560px; }
+.dropzone code { font-size: 0.78rem; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+.link-label { color: var(--accent); font-weight: 600; cursor: pointer; text-decoration: underline; }
+.drop-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.batch-error { margin-top: 14px; padding: 10px 14px; border-radius: 10px; background: color-mix(in srgb, #dc2626 12%, transparent); color: #dc2626; font-size: 0.9rem; }
+.batch-results { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+.batch-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.batch-head h3 { font-size: 1.25rem; }
+.dist-bar { display: flex; height: 14px; border-radius: 99px; overflow: hidden; background: var(--surface-2); }
+.dist-bar span { height: 100%; transition: width 0.4s; }
+.dist-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.86rem; }
+.dist-legend li { display: flex; align-items: center; gap: 6px; }
+.dist-legend strong { font-variant-numeric: tabular-nums; }
+.skipped { font-size: 0.86rem; background: color-mix(in srgb, #d97706 10%, transparent); border-radius: 10px; padding: 10px 14px; }
+.skipped summary { cursor: pointer; font-weight: 600; }
+.skipped ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); max-height: 160px; overflow: auto; }
+.table-wrap { overflow: auto; max-height: 420px; border: 1px solid var(--border); border-radius: 12px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.data-table th, .data-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.data-table th { position: sticky; top: 0; background: var(--surface-2); font-weight: 600; z-index: 1; }
+.data-table tr:last-child td { border-bottom: 0; }
+.seg-pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+
+/* ---------- k explorer ---------- */
+.k-grid { display: grid; grid-template-columns: 340px 1fr; gap: 20px; align-items: start; }
+.k-controls { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.k-value { font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.k-ticks { display: flex; justify-content: space-between; padding: 0 6px; color: var(--muted); font-size: 0.72rem; }
+.k-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sil-meter { position: relative; height: 8px; border-radius: 99px; background: var(--surface-2); }
+.sil-meter span { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--accent); transition: width 0.3s; }
+.sil-meter i { position: absolute; top: -4px; width: 2px; height: 16px; background: var(--text); opacity: 0.6; }
+.k-verdict { font-size: 0.92rem; }
+.k-verdict.best { color: var(--seg-cautious); font-weight: 600; }
+.k-controls h4 { font-size: 0.9rem; margin-bottom: -8px; }
+.k-sizes { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.k-sizes li { display: grid; grid-template-columns: 70px 1fr 34px; gap: 8px; align-items: center; font-size: 0.8rem; }
+.k-sizes .prob-bar span { opacity: 0.85; }
+.k-sizes b { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+#k-scatter { width: 100%; height: auto; display: block; }
+.k-pt { stroke: var(--surface); stroke-width: 1.2; transition: fill 0.35s; }
+
+@media (max-width: 1024px) { .k-grid { grid-template-columns: 1fr; } }
+#batch-file { text-transform: none; letter-spacing: 0; }

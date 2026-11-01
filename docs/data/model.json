@@ -36,7 +36,8 @@
     -1.136965
    ]
   ],
-  "silhouette": 0.5547
+  "silhouette": 0.5547,
+  "sigma2": 0.163921
  },
  "dataset": {
   "rows": 200,
