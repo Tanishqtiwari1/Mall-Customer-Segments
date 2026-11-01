@@ -117,7 +117,7 @@ python -m src.segmentation
 
 ## Deploy the website (GitHub Pages)
 
-The workflow in [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes `docs/` whenever it changes on `main`. To turn it on once, go to the repository's **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. The site is then served at `https://tanishqtiwari1.github.io/Medical-insurance-cost-prediction/`.
+The website is served straight from the `docs/` folder. Go to the repository's **Settings → Pages → Build and deployment**, set **Source** to **Deploy from a branch**, choose branch `main` and folder `/docs`, and save. The site is then served at `https://tanishqtiwari1.github.io/Medical-insurance-cost-prediction/` and updates automatically on every push.
 
 ## Limitations and future work
 
